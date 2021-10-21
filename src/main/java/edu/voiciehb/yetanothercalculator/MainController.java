@@ -5,122 +5,96 @@ import javafx.scene.control.Label;
 
 public class MainController {
     public Label resultLabel;
-    private boolean bPlus = false;
-    private boolean bMinus = false;
+    private boolean isPlusButtonPressed = false;
+    private boolean isMinusButtonPressed = false;
+    private boolean isStarButtonPressed = false;
+    private boolean isSlashButtonPressed = false;
 
     private String sum(int value) {
         return String.valueOf(Integer.parseInt(resultLabel.getText()) + value);
     }
-
     private String difference(int value) {
         return String.valueOf(Integer.parseInt(resultLabel.getText()) - value);
     }
+    private String product(int value) {
+        return String.valueOf(Integer.parseInt(resultLabel.getText()) * value);
+    }
+    private String quotient(int value) {
+        if(value != 0)
+        return String.valueOf(Integer.parseInt(resultLabel.getText()) / value);
+        else return "?";
+    }
+
+    private void handleArithmeticOperations(int value){
+        if (isPlusButtonPressed) {
+            resultLabel.setText(sum(value));
+            isPlusButtonPressed = false;
+        } else if (isMinusButtonPressed) {
+            resultLabel.setText(difference(value));
+            isMinusButtonPressed = false;
+        } else if (isStarButtonPressed) {
+            resultLabel.setText(product(value));
+            isStarButtonPressed = false;
+        }else if (isSlashButtonPressed) {
+            resultLabel.setText(quotient(value));
+            isSlashButtonPressed = false;
+        }
+        else resultLabel.setText(String.valueOf(value));
+    }
 
     public void oneButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(1));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(1));
-            bMinus = false;
-        } else resultLabel.setText("1");
+        handleArithmeticOperations(1);
     }
 
     public void twoButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(2));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(2));
-            bMinus = false;
-        } else resultLabel.setText("2");
+        handleArithmeticOperations(2);
     }
 
     public void threeButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(3));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(3));
-            bMinus = false;
-        } else resultLabel.setText("3");
+        handleArithmeticOperations(3);
     }
 
     public void fourButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(4));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(4));
-            bMinus = false;
-        } else resultLabel.setText("4");
+        handleArithmeticOperations(4);
     }
 
     public void fiveButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(5));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(5));
-            bMinus = false;
-        } else resultLabel.setText("5");
+        handleArithmeticOperations(5);
     }
 
     public void sixButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(6));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(6));
-            bMinus = false;
-        } else resultLabel.setText("6");
+        handleArithmeticOperations(6);
     }
 
     public void sevenButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(7));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(7));
-            bMinus = false;
-        } else resultLabel.setText("7");
+        handleArithmeticOperations(7);
     }
 
     public void eightButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(8));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(8));
-            bMinus = false;
-        } else resultLabel.setText("8");
+        handleArithmeticOperations(8);
     }
 
     public void nineButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(9));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(9));
-            bMinus = false;
-        } else resultLabel.setText("9");
+        handleArithmeticOperations(9);
     }
 
     public void zeroButtonOnAction(ActionEvent actionEvent) {
-        if (bPlus) {
-            resultLabel.setText(sum(0));
-            bPlus = false;
-        } else if (bMinus) {
-            resultLabel.setText(difference(0));
-            bMinus = false;
-        } else resultLabel.setText("0");
+        handleArithmeticOperations(0);
     }
 
     public void plusButtonOnAction(ActionEvent actionEvent) {
-        bPlus = true;
+        isPlusButtonPressed = true;
     }
-
     public void minusButtonOnAction(ActionEvent actionEvent) {
-        bMinus = true;
+        isMinusButtonPressed = true;
+    }
+    public void starButtonOnAction(ActionEvent actionEvent) {
+        isStarButtonPressed = true;
+    }
+    public void slashButtonOnAction(ActionEvent actionEvent) {
+        isSlashButtonPressed = true;
+    }
+    public void equalButtonOnAction(ActionEvent actionEvent) {
+        resultLabel.setText(resultLabel.getText());
     }
 }

@@ -14,6 +14,7 @@ public class YACalculator extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Calculator by VoiciehBy!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
