@@ -45,39 +45,30 @@ public class MainController {
     public void oneButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(1);
     }
-
     public void twoButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(2);
     }
-
     public void threeButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(3);
     }
-
     public void fourButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(4);
     }
-
     public void fiveButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(5);
     }
-
     public void sixButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(6);
     }
-
     public void sevenButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(7);
     }
-
     public void eightButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(8);
     }
-
     public void nineButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(9);
     }
-
     public void zeroButtonOnAction(ActionEvent actionEvent) {
         handleArithmeticOperations(0);
     }
