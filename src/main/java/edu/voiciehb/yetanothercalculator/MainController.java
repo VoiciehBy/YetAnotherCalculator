@@ -10,22 +10,22 @@ public class MainController {
     private boolean isStarButtonPressed = false;
     private boolean isSlashButtonPressed = false;
 
-    private String sum(int value) {
-        return String.valueOf(Integer.parseInt(resultLabel.getText()) + value);
+    private String sum(float value) {
+        return String.valueOf(Float.parseFloat(resultLabel.getText()) + value);
     }
-    private String difference(int value) {
-        return String.valueOf(Integer.parseInt(resultLabel.getText()) - value);
+    private String difference(float value) {
+        return String.valueOf(Float.parseFloat(resultLabel.getText()) - value);
     }
-    private String product(int value) {
-        return String.valueOf(Integer.parseInt(resultLabel.getText()) * value);
+    private String product(float value) {
+        return String.valueOf(Float.parseFloat(resultLabel.getText()) * value);
     }
-    private String quotient(int value) {
+    private String quotient(float value) {
         if(value != 0)
-        return String.valueOf(Integer.parseInt(resultLabel.getText()) / value);
+        return String.valueOf(Float.parseFloat(resultLabel.getText()) / value);
         else return "?";
     }
 
-    private void handleArithmeticOperations(int value){
+    private void handleArithmeticOperations(float value){
         if (isPlusButtonPressed) {
             resultLabel.setText(sum(value));
             isPlusButtonPressed = false;
